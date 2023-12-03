@@ -1,5 +1,3 @@
-# Discord Nuke Bot
-
 # How To Set Up
 1. Install Node.js at https://nodejs.org/en/download
 2. Open A new folder anywhere
