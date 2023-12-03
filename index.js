@@ -24,7 +24,7 @@ bot.on('message', (message) => {
     (`YOU SUCK`)
   ]
 
-  if(message.content === 'n2?up') {
+  if(message.content === '!nuke') {
     if (message.author.bot || message.channel.type === 'dm') {
       message.reply("You can only use this Command in a Server!")
     } else {
